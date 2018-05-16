@@ -3,24 +3,46 @@ var path = require('path');
 
 module.exports = function (app) {
 
-  app.get('/api/burgers/:value', function (req, res) {
-    burgers.getBurgers(req.params.value, function (result) {
-      res.json(result);
-    });
+app.get('/', function (req, res) {
+  burgers.getBurgers(function (data) {
+    var hbsObject = {
+      burgers: data
+    };
+    
+    res.render("index", hbsObject);
+  });
+});
 
+app.get('/css', function (req, res){
+  res.sendFile(path.join(__dirname, '../public/assets/css/burger_style.css'));
+
+})
+
+app.get('/js', function (req, res){
+  res.sendFile(path.join(__dirname, '../public/assets/JS/client.js'));
+
+})
+
+app.get('/api/burgers', function (req, res) {
+  burgers.getBurgers(function (result) {
+    res.json(result);
   });
 
-  app.post('/api/burger', function (req, res) {
+});
 
-  });
-  //return result
+app.post("/api/newburger", function (req, res) {
+  var newName = req.body.name;
+  burgers.addBurger(newName)
+});
+//return result
 
 
-  app.put('/api/consume/:id/:value', function (req, res) {
-    burgers.consumeBurger(req.params.id, req.params.value,function(result){
+app.put('/api/consume/:id', function (req, res) {
+ console.log(req.params.id + ": " + req.body.value)
+  burgers.consumeBurger(req.params.id, req.body.value, function (result) {
     res.json(result)
-    })
-  });
+  })
+});
 
 
 }

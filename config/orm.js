@@ -2,9 +2,9 @@ var connection = require("../config/connection.js");
 
 
 var ORM = {
-    selectAll: function (tableInput, SearchCol, colValue, cb) {
-        var queryString = "SELECT * FROM ?? WHERE ?? = ?";
-        connection.query(queryString, [tableInput, SearchCol, colValue], function (err, res) {
+    selectAll: function (tableInput, orderBy, cb) {
+        var queryString = "SELECT * FROM ?? ORDER BY ?? asc";
+        connection.query(queryString, [tableInput, orderBy], function (err, res) {
             if (err) throw err;
             cb(res)
         });
