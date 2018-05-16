@@ -30,7 +30,6 @@ $(".burgerbutton").on("click", function () {
             value: 1
         },
         success: function (result) {
-            console.log("put from client.js ran")
             location.reload()
         }
     });

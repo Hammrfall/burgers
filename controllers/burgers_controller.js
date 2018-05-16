@@ -23,6 +23,14 @@ app.get('/js', function (req, res){
 
 })
 
+app.get('/burger/image', function (req,res){
+  res.sendFile(path.join(__dirname, '../public/assets/img/burger.png'))
+})
+
+app.get('/background/image', function (req,res){
+  res.sendFile(path.join(__dirname,'../public/assets/img/halftone-yellow.png'))
+})
+
 app.get('/api/burgers', function (req, res) {
   burgers.getBurgers(function (result) {
     res.json(result);
