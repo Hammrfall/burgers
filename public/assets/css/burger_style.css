@@ -2,8 +2,8 @@ body {
     background-image: url("/background/image")
 }
 
-h1 {
-    color: red;
+h1, h2 {
+    color: green;
     text-align:  center;
 }
 
