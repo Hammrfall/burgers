@@ -1,4 +1,4 @@
-# burgers
+# Burgers! Express App
 
 ## Functionality
 This application allows the user to input a new burger, which will then be displayed as available.  The burgers in the available list can be 'consumed', whereupon they appear in the consumed list.
