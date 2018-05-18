@@ -5,7 +5,7 @@ This application allows the user to input a new burger, which will then be displ
 
 The app utilizes a mySQL database for persistence, as well as handlebars to dynamically create and update the HTML.
 
-![Interface](/public/assets/img/ClassDiagramClassDiagram.png "Interface diagram")
+![Interface](/public/assets/img/ClassDiagram.png "Interface diagram")
 
 ## Technology
 This is a full stack app running  on an express node server.  It is also a demonstration of the MVC pattern of programming.
